@@ -14,7 +14,7 @@
 </p>
 
 <p align="center">
-  <b>Developed with ❤️ by <a href="https://github.com/YourUsername">YourNameHere</a></b><br>
+  <b>Developed with ❤️ by <a href="https://github.com/Devil-bgmi">EVIL</a></b><br>
   📬 Manage Gmail aliases, plus-addressing, and custom domain emails — all from Telegram!
 </p>
 
