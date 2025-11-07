@@ -92,7 +92,7 @@ def system_info():
         ("Python Version", f"{sys.version.split()[0]}", Colors.GREEN),
         ("Platform", f"{sys.platform}", Colors.BLUE),
         ("Bot Version", "2.0.0", Colors.MAGENTA),
-        ("Developer", "Your Name", Colors.CYAN)
+        ("Developer", "DEVIL BGMI", Colors.CYAN)
     ]
     
     for label, value, color in info_items:
