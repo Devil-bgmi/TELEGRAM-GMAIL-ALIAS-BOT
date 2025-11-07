@@ -23,7 +23,7 @@
 </p>
 
 <p align="center">
-  <img src="https://avatars.githubusercontent.com/u/184248010?v=4" alt="Banner" width="400">
+  <img src="https://avatars.githubusercontent.com/u/184248010?v=4" alt="Banner" width="300">
 </p>
 
 <p align="center">
