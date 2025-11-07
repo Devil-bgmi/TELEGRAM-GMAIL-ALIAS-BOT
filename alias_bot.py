@@ -18,12 +18,6 @@ from telegram.ext import (
 from telegram.constants import ParseMode
 
 from config import Config
-from dotenv import load_dotenv
-import os
-
-load_dotenv()
-
-BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
 
 # Color codes for terminal
 class Colors:
