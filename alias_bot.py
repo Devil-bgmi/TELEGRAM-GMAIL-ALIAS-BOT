@@ -19,48 +19,13 @@ from telegram.constants import ParseMode
 
 from config import Config
 
-# Color codes for terminal
-class Colors:
-    RED = '\033[91m'
-    GREEN = '\033[92m'
-    YELLOW = '\033[93m'
-    BLUE = '\033[94m'
-    MAGENTA = '\033[95m'
-    CYAN = '\033[96m'
-    WHITE = '\033[97m'
-    BOLD = '\033[1m'
-    UNDERLINE = '\033[4m'
-    END = '\033[0m'
-
-def show_banner():
-    banner = f"""
-{Colors.CYAN}{Colors.BOLD}
-╔══════════════════════════════════════════════════════════════╗
-║                                                              ║
-║  █████╗ ██╗     ██╗ █████╗ ███████╗███████╗███████╗         ║
-║ ██╔══██╗██║     ██║██╔══██╗██╔════╝██╔════╝██╔════╝         ║
-║ ███████║██║     ██║███████║███████╗███████╗███████╗         ║
-║ ██╔══██║██║     ██║██╔══██║╚════██║╚════██║╚════██║         ║
-║ ██║  ██║███████╗██║██║  ██║███████║███████║███████║         ║
-║ ╚═╝  ╚═╝╚══════╝╚═╝╚═╝  ╚═╝╚══════╝╚══════╝╚══════╝         ║
-║                                                             ║
-║    📧 Telegram Email Alias Manager Bot by @the_BR_king      ║
-║                                                             ║
-╠══════════════════════════════════════════════════════════════╣
-║                                                              ║
-║  {Colors.GREEN}🚀 Version: 2.0.0{Colors.CYAN}                                  ║
-║  {Colors.YELLOW}👨‍💻 Developer: Your Name{Colors.CYAN}                              ║
-║  {Colors.MAGENTA}📧 Generate unlimited email aliases instantly!{Colors.CYAN}           ║
-║  {Colors.BLUE}🔒 Privacy-focused & Secure{Colors.CYAN}                               ║
-║                                                              ║
-╚══════════════════════════════════════════════════════════════╝
-{Colors.END}
-
-{Colors.GREEN}✅ Bot is starting...{Colors.END}
-{Colors.YELLOW}📊 Loading configuration...{Colors.END}
-{Colors.BLUE}🗄️  Initializing database...{Colors.END}
-"""
-    print(banner)
+# Import the animation module
+try:
+    from animated_banner import main_animation
+except ImportError:
+    # Fallback if animation module is not available
+    def main_animation():
+        print("🚀 Starting Telegram Email Alias Manager Bot...")
 
 EMAIL_REGEX = re.compile(r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$')
 
@@ -766,8 +731,8 @@ Use `/list` to see all aliases with IDs.
         logger.info("Bot started and polling...")
 
 def main():
-    # Show the colorful banner
-    show_banner()
+    # Show animated banner before starting
+    main_animation()
     
     if not Config.BOT_TOKEN:
         logger.error("TELEGRAM_BOT_TOKEN environment variable not set")
