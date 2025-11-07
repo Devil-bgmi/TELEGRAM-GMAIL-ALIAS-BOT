@@ -17,6 +17,15 @@ from telegram.ext import (
 )
 from telegram.constants import ParseMode
 
+# ✅ Force .env loading from the current directory
+from dotenv import load_dotenv
+env_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), ".env")
+if os.path.exists(env_path):
+    load_dotenv(dotenv_path=env_path)
+    print(f"✅ Loaded environment variables from {env_path}")
+else:
+    print(f"⚠️ .env file not found at {env_path}")
+
 from config import Config
 
 # Import the animation module
